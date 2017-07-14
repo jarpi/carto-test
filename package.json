@@ -1,0 +1,21 @@
+{
+  "private": true,
+  "name": "node-carto-code-test",
+  "version": "1.0.0",
+  "main": "server.js",
+  "keywords": [],
+  "author": "",
+  "license": "BSD-3-Clause",
+  "dependencies": {
+    "express": "^4.15.3",
+    "mapnik": "3.6.2",
+    "sphericalmercator": "^1.0.5"
+  },
+  "scripts": {
+    "mapnik-example": "node mapnik-example.js",
+    "dev": "node node_modules/nodemon/bin/nodemon.js server.js"
+  },
+  "devDependencies": {
+    "nodemon": "^1.11.0"
+  }
+}
