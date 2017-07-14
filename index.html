@@ -13,8 +13,8 @@
 
         <style>
             #map {
-                width: 256px;
-                height: 256px;
+                width: 600px;
+                height: 400px;
             }
 
             .leaflet-container {
@@ -35,8 +35,8 @@
 
             var map = L.map('map', {
                 crs: L.CRS.EPSG3857,
-                center: [0, 0],
-                zoom: 0,
+                center: [40, -80],
+                zoom: 1,
                 layers: [admin0]
             });
 
