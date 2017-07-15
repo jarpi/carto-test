@@ -9,6 +9,8 @@ const express = require('express');
 const app = express();
 const port = 8888;
 
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
+
 mapnik.register_datasource(path.join(mapnik.settings.paths.input_plugins, 'shape.input'));
 
 const TILE_SIZE = 256;

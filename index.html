@@ -9,12 +9,19 @@
         <link rel="shortcut icon" type="image/x-icon" href="docs/images/favicon.ico" />
 
         <link rel="stylesheet" href="https://unpkg.com/leaflet@1.0.3/dist/leaflet.css" integrity="sha512-07I2e+7D8p6he1SIM+1twR5TIrhUQn9+I6yjqD53JQjFiMf8EtC93ty0/5vJTZGF8aAocvHYNEDJajGdNx1IsQ==" crossorigin=""/>
+        <link rel="stylesheet" href="bower_components/leaflet.loading/src/Control.Loading.css" crossorigin=""/>
         <script src="https://unpkg.com/leaflet@1.0.3/dist/leaflet.js" integrity="sha512-A7vV8IFfih/D732iSSKi20u/ooOfj/AGehOKq0f4vLT1Zr2Y+RX7C+w8A1gaSasGtRUZpF/NZgzSAu4/Gc41Lg==" crossorigin=""></script>
+        <script src="bower_components/leaflet.loading/src/Control.Loading.js" charset="utf-8"></script>
 
         <style>
             #map {
-                width: 600px;
-                height: 400px;
+                width: 100%;
+                min-height: 100%;
+                position: absolute;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
             }
 
             .leaflet-container {
@@ -37,7 +44,8 @@
                 crs: L.CRS.EPSG3857,
                 center: [40, -80],
                 zoom: 1,
-                layers: [admin0]
+                layers: [admin0],
+                loadingControl: true
             });
 
             var layers = {
@@ -46,6 +54,7 @@
             };
 
             L.control.layers(null,layers).addTo(map);
+
         </script>
     </body>
 </html>
