@@ -16,6 +16,14 @@
     "dev": "node node_modules/nodemon/bin/nodemon.js server.js"
   },
   "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-filter": "^5.0.0",
+    "gulp-flatten": "^0.3.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-print": "^2.0.1",
+    "gulp-uglify": "^3.0.0",
+    "main-bower-files": "^2.13.1",
     "nodemon": "^1.11.0"
   }
 }

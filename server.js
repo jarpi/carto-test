@@ -9,7 +9,7 @@ const express = require('express');
 const app = express();
 const port = 8888;
 
-app.use('/bower_components', express.static(__dirname + '/bower_components'));
+app.use('/public', express.static(__dirname + '/public'));
 
 mapnik.register_datasource(path.join(mapnik.settings.paths.input_plugins, 'shape.input'));
 
@@ -29,6 +29,7 @@ app.get('/:style/:z/:x/:y', function(req, res) {
         const format = req.params.y.substr(req.params.y.indexOf('.')+1);
         console.dir(`Z: ${z} X: ${x} Y: ${y} format: ${format}`);
         const square = mercator.bbox(x, y, z, false, '900913');
+        console.dir(map);
         map.extent = square;
         const im = new mapnik.Image(TILE_SIZE, TILE_SIZE);
         map.render(im, function(err, im) {
