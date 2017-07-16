@@ -16,14 +16,22 @@
     "dev": "node node_modules/nodemon/bin/nodemon.js server.js"
   },
   "devDependencies": {
+    "chai": "^4.1.0",
+    "chai-as-promised": "^7.1.1",
     "gulp": "^3.9.1",
     "gulp-concat": "^2.6.1",
     "gulp-filter": "^5.0.0",
     "gulp-flatten": "^0.3.1",
     "gulp-load-plugins": "^1.5.0",
+    "gulp-mocha": "^4.3.1",
     "gulp-print": "^2.0.1",
     "gulp-uglify": "^3.0.0",
+    "gulp-util": "^3.0.8",
+    "gulp-watch": "^4.3.11",
+    "image-diff": "^1.6.3",
     "main-bower-files": "^2.13.1",
-    "nodemon": "^1.11.0"
+    "mocha": "^3.4.2",
+    "nodemon": "^1.11.0",
+    "should": "^11.2.1"
   }
 }

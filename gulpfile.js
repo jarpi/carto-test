@@ -1,12 +1,15 @@
 const gulp = require('gulp');
+const mocha = require('gulp-mocha');
+const gutil = require('gulp-util');
+const livereload = require('gulp-livereload');
+const watch = require('gulp-watch');
 
 const plugins = require("gulp-load-plugins")({
-	pattern: ['gulp-*', 'gulp.*', 'main-bower-files', 'print'],
+    pattern: ['gulp-*', 'gulp.*', 'main-bower-files', 'print'],
 	replaceString: /\bgulp[\-.]/
 });
 
 const dest = __dirname + '/public/';
-console.dir(dest);
 
 gulp.task('scripts', function() {
 
@@ -37,6 +40,15 @@ gulp.task('img', function() {
 
 });
 
+gulp.task('test', function() {
+    gulp.src(['spec/**/*.js'], { read: false  })
+            .pipe(mocha({ reporter: 'spec'  }))
+});
 
-gulp.task('default', ['scripts', 'css', 'img']);
+gulp.task('watch', function() {
+    livereload.listen();
+    gulp.watch(['lib/**/*.js', 'spec/**/*.js'], ['scripts', 'css', 'img', 'test']);
+});
+
+gulp.task('default', ['scripts', 'css', 'img', 'test', 'watch']);
 
