@@ -10,9 +10,9 @@ const PUBLIC_DIR = '/public';
 
 app.use('/public', express.static(__dirname + PUBLIC_DIR));
 
-function initHttp() {
-    return new Promise(function(resolve, reject) {
-        app.listen(port, function(err) {
+const initHttp = () => {
+    return new Promise((resolve, reject) => {
+        app.listen(port, (err) => {
             if (err) {
                 return reject(err);
             }
@@ -22,13 +22,13 @@ function initHttp() {
 }
 
 initHttp()
-    .then(function() {
+    .then(() => {
         console.log('app initialized on port ' + port);
     })
-    .then(function() {
+    .then(() => {
         return routes(app);
     })
-    .catch(function(err) {
+    .catch((err) => {
         console.dir(err);
     });
 
