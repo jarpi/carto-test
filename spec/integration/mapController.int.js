@@ -5,6 +5,7 @@ const expect = chai.expect;
 const app = require('../../server.js');
 
 describe('API tests', () => {
+
     it('Should return 400 for invalid endpoint', (done) => {
         request(app)
         .get('/test')
@@ -17,10 +18,10 @@ describe('API tests', () => {
 
     it('Should return 400 for invalid param style in /style/z/x/y', (done) => {
         request(app)
-        .get('/admin2/0/1/2.png')
+        .get('/admin2/0/0/0.png')
         .end((err, res) => {
             expect(res.statusCode).to.be.equal(400);
-            expect(res.body.error).to.be.equal('Invalid params');
+            expect(res.body.error).to.be.equal('Invalid style param');
             done();
         });
     });
@@ -30,7 +31,7 @@ describe('API tests', () => {
         .get('/admin0/-1/1/2.png')
         .end((err, res) => {
             expect(res.statusCode).to.be.equal(400);
-            expect(res.body.error).to.be.equal('Invalid params');
+            expect(res.body.error).to.be.equal('Z param out of bounds');
             done();
         });
     });
@@ -40,7 +41,17 @@ describe('API tests', () => {
         .get('/admin0/4/99/2.png')
         .end((err, res) => {
             expect(res.statusCode).to.be.equal(400);
-            expect(res.body.error).to.be.equal('Invalid params');
+            expect(res.body.error).to.be.equal('X param out of bounds');
+            done();
+        });
+    });
+
+    it('Should return 400 for invalid param X in /style/z/x/y', (done) => {
+        request(app)
+        .get('/admin0/0/0/2.png')
+        .end((err, res) => {
+            expect(res.statusCode).to.be.equal(400);
+            expect(res.body.error).to.be.equal('Y param out of bounds');
             done();
         });
     });
