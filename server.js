@@ -32,3 +32,4 @@ initHttp()
         console.dir(err);
     });
 
+module.exports = app;

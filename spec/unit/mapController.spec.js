@@ -42,7 +42,6 @@ describe('mapController', () => {
             return fs.writeFile(TEST_IMG_PATH_GENERATED, imgBuffer, null, (err) => {
                 if (err) throw err;
                 return true;
-                console.dir('asad');
             })
         })
         .then(function(){
