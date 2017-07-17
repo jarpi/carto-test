@@ -13,7 +13,9 @@
   },
   "scripts": {
     "mapnik-example": "node mapnik-example.js",
-    "dev": "node node_modules/nodemon/bin/nodemon.js server.js"
+    "dev": "node node_modules/nodemon/bin/nodemon.js server.js",
+    "standard-test": "node node_modules/standard/bin/cmd.js --env mocha --fix \"./spec/**/*.js\"",
+    "standard-code": "node node_modules/standard/bin/cmd.js standard --fix \"./lib/**/*.js\""
   },
   "devDependencies": {
     "chai": "^4.1.0",
@@ -25,6 +27,7 @@
     "gulp-load-plugins": "^1.5.0",
     "gulp-mocha": "^4.3.1",
     "gulp-print": "^2.0.1",
+    "gulp-standard": "^10.0.0",
     "gulp-uglify": "^3.0.0",
     "gulp-util": "^3.0.8",
     "gulp-watch": "^4.3.11",
@@ -33,6 +36,7 @@
     "mocha": "^3.4.2",
     "nodemon": "^1.11.0",
     "should": "^11.2.1",
+    "standard": "^10.0.2",
     "supertest": "^3.0.0"
   }
 }
