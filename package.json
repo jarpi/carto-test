@@ -13,12 +13,14 @@
     "sphericalmercator": "^1.0.5"
   },
   "scripts": {
+    "postinstall": "node_modules/bower/bin/bower install -F",
     "mapnik-example": "node mapnik-example.js",
     "dev": "node node_modules/nodemon/bin/nodemon.js server.js",
     "standard-test": "node node_modules/standard/bin/cmd.js --env mocha --fix \"./spec/**/*.js\"",
     "standard-code": "node node_modules/standard/bin/cmd.js standard --fix \"./lib/**/*.js\""
   },
   "devDependencies": {
+    "bower": "^1.8.0",
     "chai": "^4.1.0",
     "chai-as-promised": "^7.1.1",
     "gulp": "^3.9.1",
