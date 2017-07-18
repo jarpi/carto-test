@@ -1,0 +1,22 @@
+# Carto codetest tile-server
+### Run in docker
+`` docker build -t codetest/tile-server . ``
+`` docker run codetest/tile-server ``
+###  Run in standalone app
+`` npm install && npm start ``
+## Development
+### Useful development commands
+`` gulp `` - minify resources && run tests && linting
+### Open demo
+[http://localhost:8888](http://localhost:8888)
+### TODO
+ - More tests (bound by zoom level)
+ - Build a docker image from scratch
+ - Continuous Integration / Continuous delivery
+ - Use pm2
+ - Stream logs
+ - Add alerts
+ - Stress testing
+ - Refactor frontend code (Wrap frontend code into his own file)
+ - Use restify / disable express modules
+ - Authentication/Authorization?
