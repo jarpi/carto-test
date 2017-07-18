@@ -1,7 +1,7 @@
 # Carto codetest tile-server
 ### Run in docker
 `` docker build -t codetest/tile-server . ``
-`` docker run codetest/tile-server ``
+`` docker run -p 8888:8888 -d codetest/tile-server ``
 ###  Run in standalone app
 `` npm install && npm start ``
 ## Development
