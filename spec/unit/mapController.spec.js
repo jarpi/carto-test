@@ -1,7 +1,8 @@
 'use strict'
+/* eslint-env mocha */
 const fs = require('fs')
 const chai = require('chai')
-const should = require('should')
+require('should')
 const chaiAsPromised = require('chai-as-promised')
 chai.use(chaiAsPromised)
 const mapCtrl = require('../../lib/controllers/mapController.js')

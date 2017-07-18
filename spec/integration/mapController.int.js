@@ -1,4 +1,5 @@
 'use strict'
+/* eslint-env mocha */
 const request = require('supertest')
 const chai = require('chai')
 const expect = chai.expect

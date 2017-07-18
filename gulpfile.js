@@ -27,7 +27,6 @@ gulp.task('css', function () {
 gulp.task('img', function () {
   return gulp.src(plugins.mainBowerFiles(), { base: './bower_components' })
         .pipe(plugins.filter('**/*.png'))
-        .pipe(plugins.print())
         .pipe(plugins.flatten())
         .pipe(gulp.dest(dest + '/css/images'))
 })
@@ -43,7 +42,6 @@ gulp.task('watch', function () {
 
 gulp.task('lint', function () {
   return gulp.src(['./server.js', './lib/**/*.js', './spec/**/*.js'])
-    .pipe(plugins.print())
     .pipe(standard())
     .pipe(standard.reporter('default', {
       breakOnError: true,
