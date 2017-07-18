@@ -7,8 +7,10 @@
 ## Development
 ### Useful development commands
 `` gulp `` - minify resources && run tests && linting
-### Open demo
+### Run demo
 [http://localhost:8888](http://localhost:8888)
+[http://5.255.85.233:8888](http://5.255.85.233:8888)
+
 ### TODO
  - More tests (bound by zoom level)
  - Build a docker image from scratch
@@ -20,3 +22,4 @@
  - Refactor frontend code (Wrap frontend code into his own file)
  - Use restify / disable express modules
  - Authentication/Authorization?
+
